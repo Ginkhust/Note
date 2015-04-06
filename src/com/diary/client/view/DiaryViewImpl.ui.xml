@@ -1,0 +1,133 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+	<ui:style>
+	.menu {
+		background-color: #F93535;
+		padding-right: 10%;
+		padding-left: 10%;
+		border: 1px solid #FE5A73;
+		box-shadow: 0 2px 3px #bbbbbb;
+	}
+	
+	.form-control {
+		resize: none;
+		display: block;
+		width: 100%;
+		height: 43px;
+		padding: 10px 18px;
+		font-size: 15px;
+		line-height: 1.42857143;
+		color: #333333;
+		background-color: #ffffff;
+		background-image: none;
+		border: 1px solid #cccccc;
+		border-radius: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+			ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+			.15s;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+	}
+	
+	.form-control:focus {
+		border-color: #66afe9;
+		outline: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+			rgba(102, 175, 233, 0.6);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+			rgba(102, 175, 233, 0.6)
+	}
+	
+	.form-control::-moz-placeholder {
+		color: #999999;
+		opacity: 1
+	}
+	
+	.form-control:-ms-input-placeholder {
+		color: #999999
+	}
+	
+	.form-control::-webkit-input-placeholder {
+		color: #999999
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<b:Navbar addStyleNames="{style.menu}">
+			<b:NavbarHeader>
+				<b:NavbarBrand icon="RA"></b:NavbarBrand>
+				<b:NavbarCollapseButton dataTarget="#navbar-collapse" />
+			</b:NavbarHeader>
+
+			<b:NavbarCollapse b:id="navbar-collapse">
+				<b:NavbarNav pull="RIGHT">
+					<b:AnchorListItem active="true" icon="HOME"
+						ui:field="home">&nbsp;&nbsp;Home</b:AnchorListItem>
+					<b:AnchorListItem icon="LIST" ui:field="diaryPage">&nbsp;&nbsp;Diary</b:AnchorListItem>
+					<b:AnchorListItem icon="LEAF" ui:field="aboutMePage">&nbsp;&nbsp;About
+						me</b:AnchorListItem>
+					<b:AnchorListItem icon="SIGN_IN" ui:field="loginPage">&nbsp;&nbsp;Login</b:AnchorListItem>
+					<b:AnchorListItem icon="USER" ui:field="registerPage">&nbsp;&nbsp;Register</b:AnchorListItem>
+				</b:NavbarNav>
+			</b:NavbarCollapse>
+		</b:Navbar>
+
+		<b:Container>
+			<b:Row>
+				<b:Column size="MD_8">
+					<b:Form>
+						<b:FormGroup>
+							<b:TextBox placeholder="Title" ui:field="titleBox"></b:TextBox>
+						</b:FormGroup>
+						<b:FormGroup>
+							<g:TextArea addStyleNames="{style.form-control}"
+								height="100px" ui:field="contentBox"></g:TextArea>
+						</b:FormGroup>
+					</b:Form>
+
+				</b:Column>
+				<b:Column size="MD_4">
+					<b:LinkedGroup>
+						<b:LinkedGroupItem active="true" text="Category" />
+						<b:LinkedGroupItem text="Diary - 12-03-2015" />
+						<b:LinkedGroupItem text="Diary - 22-05-2015" />
+						<b:LinkedGroupItem text="Diary - 31-10-2015" />
+					</b:LinkedGroup>
+				</b:Column>
+			</b:Row>
+			<b:Row>
+				<b:Column size="MD_4">
+					<b:Column size="SM_6">
+						<b:Button type="SUCCESS" icon="PLUS" ui:field="addNotes">&nbsp;&nbsp;Add
+							Notes</b:Button>
+					</b:Column>
+					<b:Column size="SM_6">
+						<b:Button type="DANGER" icon="REMOVE" ui:field="clearNotes">&nbsp;&nbsp;Clear</b:Button>
+					</b:Column>
+				</b:Column>
+				<b:Column size="MD_4">
+				</b:Column>
+				<b:Column size="MD_4">
+				</b:Column>
+			</b:Row>
+			<b:Row>
+				<b:Column size="MD_4">
+					<b:Panel>
+						<b:PanelHeader ui:field="panelHeader">
+						</b:PanelHeader>
+						<b:PanelBody ui:field="panelBody">
+						</b:PanelBody>
+					</b:Panel>
+				</b:Column>
+				<b:Column size="MD_4" ui:field="field2">
+
+				</b:Column>
+				<b:Column size="MD_4" ui:field="field3">
+
+				</b:Column>
+			</b:Row>
+		</b:Container>
+	</g:HTMLPanel>
+</ui:UiBinder> 

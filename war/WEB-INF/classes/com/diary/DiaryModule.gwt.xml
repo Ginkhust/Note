@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.7.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="diary">
+	<inherits name="com.google.gwt.user.User" />
+	<source path="client" />
+	<source path="shared" />
+	<source path="server" />
+
+	<!-- inherits activity and place -->
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+
+	<!-- import theme gwtbootstrap3 -->
+	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
+	<public path='resources'>
+		<include name='css/*.css' />
+	</public>
+	
+	<!-- Use Objectify -->
+	
+	<!-- Use ClientFactoryImpl by default -->
+	<replace-with class="com.diary.client.ClientFactoryImpl">
+		<when-type-is class="com.diary.client.ClientFactory" />
+	</replace-with>
+	
+	<!-- change theme default of gwtbootstrap3 -->
+	<stylesheet src='css/bootstrap.min.css' />
+
+
+	<entry-point class="com.diary.client.DiaryEntry"></entry-point>
+
+</module>
